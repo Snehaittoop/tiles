@@ -1,0 +1,35 @@
+<div class="row" style="background-color: rgb(28,92,150);">
+  <div class="col-12 col-sm-6 col-md-4 col-xxl-2 p-5" *ngFor="let i of patientList">
+    <div class="box" data-aos="fade-up" data-aos-delay="100" style=" background-color: rgba(40, 112, 173, 255); border-radius: 10px; border: 3px solid rgba(84, 139, 205, 255);">
+      <div class="d-flex justify-content-between" style="position: relative; background-color: rgba(2, 71, 139, 255); color: rgba(67, 194, 234, 255); border: 3px solid rgba(92, 146, 214, 255); border-radius: 10px;">
+        <p class="icon col-sm-2 fw-bolder" style="border: 6px solid rgba(14, 255, 186, 1)"> {{i.id}} </p>
+        <div class="col-12">
+          <P style="text-align: center" class="fw-bolder">{{i.name[0].given}} {{i.name[0].family}}</P>
+          <P style="text-align: center" class="fw-bolder"><span style="color:white">MRN</span>:{{i.identifier[0].value}}/-({{i.gender}}-{{ calculateAge(i.birthDate) }})</P>
+        </div>
+      </div>
+      <h6 style="color: white; font-size: 12px; text-align: right; margin-right: 7px">#Labs: <span style="color: aqua"> 10/01 05:29 </span></h6>
+      <div class="row m-1">
+        <div class="col-6">
+          <p style="color: white">HR : <span style="color:rgb(5, 248, 191)">72</span></p>
+        </div>
+        <div class="col-6">
+          <p style="color: white">SBP : <span style="color:aqua">144</span></p>
+        </div>
+        <div class="col-6">
+          <p style="color:
+           white">Spo2 : <span style="color:rgb(5, 248, 191)">97.5</span></p>
+        </div>
+        <div class="col-6">
+          <p style="color: white">TC : <span style="color:aqua">4.95</span></p>
+        </div>
+        <div class="btn-wrap d-flex justify-content-center" (click)="goToVent(i.identifier[0].value)" style="background-color: rgba(2, 71, 139, 255); border: 2px solid rgba(92, 146, 214, 255); border-top-left-radius: 10px; border-top-right-radius: 10px;">
+          <p style="color: white"><b> Vent </b></p>
+        </div>
+        
+       
+      <div class="btn-wrap d-flex justify-content-center" style="background-color: rgba(2, 71, 139, 255); border: 2px solid rgba(92, 146, 214, 255); border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+        <p style="color: rgba(24, 172, 165, 255)"><b> Sepsis </b></p>
+      </div>
+    </div></div></div>
+ 
